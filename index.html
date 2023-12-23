@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Exam JS</title>
+</head>
+<body>
+    
+    <!-- MAIN -->
+    <div class="container">
+        <div class="clock">
+            <div class="clock-day"></div>
+            <div class="clock-date"></div>
+            <div class="clock-time"></div>
+        </div>
+        <div class="option-buttons">
+            <img src="images/alarm-clock.png" alt="#" id="alarm">
+            <img src="images/stopwatch.png" alt="#" id="stopwatch">
+            <img src="images/time.png" alt="#" id="timer">
+        </div>
+    </div>
+    <!-- .... -->
+
+    <!-- OPTIONS -->
+    <div class="options hide"> 
+        <img src="images/double-up-arrow.png" alt="#" class="options-hide">
+
+        <!-- ALARM -->
+        <div class="options-alarm">
+            <div class="options-alarm-set">
+                <div class="options-alarm-set-hours">
+                    <p class="options-alarm-set-hours-initial">00</p>
+                    <div class="options-alarm-set-hours-numbers">
+                        <div class="options-alarm-set-hours-numbers-item"></div>
+                    </div>
+                </div>
+                <p class="options-alarm-set-colon">:</p>
+                <div class="options-alarm-set-min">
+                    <p class="options-alarm-set-min-initial">00</p>
+                    <div class="options-alarm-set-min-numbers">
+                        <div class="options-alarm-set-min-numbers-item"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="options-alarm-btn">+</button>
+            <div class="options-alarm-items"></div>
+        </div>
+        <!-- ..... -->
+
+        <!-- STOPWATCH -->
+        <div class="options-stopwatch hide">
+            <p class="options-stopwatch-text">00:00:00:000</p>
+            <div class="options-stopwatch-btns">
+                <button class="options-stopwatch-btns-start">START</button>
+                <button class="options-stopwatch-btns-pause" disabled>PAUSE</button>
+                <button class="options-stopwatch-btns-reset" disabled>RESET</button>
+                <button class="options-stopwatch-btns-interval" disabled>INTERVAL</button>
+            </div>
+            <div class="options-stopwatch-intervals"></div>
+        </div>
+        <!-- ......... -->
+        
+        <!-- TIMER -->
+        <div class="options-timer hide"> 
+            <h3 class="options-timer-message hide">TIME IS UP</h3>           
+            <div class="options-timer-set">
+                <div class="options-timer-set-hours">
+                    <p class="options-timer-set-hours-initial">00</p>
+                    <div class="options-timer-set-hours-numbers">
+                        <div class="options-timer-set-hours-numbers-item"></div>
+                    </div>
+                </div>
+
+                <p class="options-timer-set-colon">:</p>
+
+                <div class="options-timer-set-min">
+                    <p class="options-timer-set-min-initial">00</p>
+                    <div class="options-timer-set-min-numbers">
+                        <div class="options-timer-set-min-numbers-item"></div>
+                    </div>
+                </div>
+
+                <p class="options-timer-set-colon">:</p>
+
+                <div class="options-timer-set-sec">
+                    <p class="options-timer-set-sec-initial">00</p>
+                    <div class="options-timer-set-sec-numbers">
+                        <div class="options-timer-set-sec-numbers-item"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="options-timer-btns">
+                <button class="options-timer-btns-start">START</button>
+                <button class="options-timer-btns-pause" disabled>PAUSE</button>
+                <button class="options-timer-btns-reset" disabled>RESET</button>
+            </div>
+        </div>
+        <!-- ..... -->
+
+    </div>
+    <!-- ....... -->    
+
+    <script src="main.js"></script>
+</body>
+</html>

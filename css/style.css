@@ -1,0 +1,379 @@
+@font-face {
+  font-family: "Roboto-Mono";
+  src: url(fonts/RobotoMono-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  user-select: none;
+  font-family: "Roboto-Mono";
+  flex-shrink: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #5761B2, #1FC5A8);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 75%;
+  min-width: 400px;
+  max-width: 1000px;
+  height: 40%;
+  min-height: 400px;
+  padding: 50px;
+  border-radius: 50px;
+  animation: flashing 3s infinite ease-in-out;
+}
+
+@keyframes flashing {
+  0% {
+    box-shadow: 0 0 20px #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 50px 20px #ffffff;
+  }
+  100% {
+    box-shadow: 0 0 20px #ffffff;
+  }
+}
+.clock {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px;
+  font-family: "Roboto-Mono";
+  font-size: 40px;
+}
+.clock-day {
+  justify-self: flex-start;
+}
+.clock-time {
+  grid-area: 2/1/2/3;
+  font-size: 64px;
+  letter-spacing: 0.25em;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+
+.option-buttons {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+}
+.option-buttons > img {
+  width: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.option-buttons > img:hover {
+  filter: invert(1);
+  transform: scale(1.2);
+}
+
+.options {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 75%;
+  min-width: 500px;
+  max-width: 1000px;
+  height: 40%;
+  padding: 20px;
+  font-family: "Roboto-Mono";
+  border-radius: 50px;
+  animation: flashing 3s infinite ease-in-out;
+}
+.options-hide {
+  width: 32px;
+  animation: animation forwards 1s infinite;
+  cursor: pointer;
+}
+@keyframes animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.options > div {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 50px;
+  opacity: 0;
+}
+.options-alarm {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 1;
+}
+.options-alarm-header {
+  font-size: 2em;
+}
+.options-alarm-set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 50%;
+}
+.options-alarm-set-hours, .options-alarm-set-min {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 40%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px #ffffff;
+  font-size: 1.5em;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.options-alarm-set-hours:hover, .options-alarm-set-min:hover {
+  box-shadow: inset 0 0 20px 10px #ffffff;
+}
+.options-alarm-set-hours-numbers, .options-alarm-set-min-numbers {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.options-alarm-set-hours-numbers-item, .options-alarm-set-min-numbers-item {
+  text-align: center;
+  background-color: #ffffff;
+}
+.options-alarm-set-hours-numbers-item > p:hover, .options-alarm-set-min-numbers-item > p:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.options-alarm-set-colon {
+  font-size: 2em;
+}
+.options-alarm-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: 800;
+  background-color: transparent;
+  box-shadow: inset 0 0 20px #ffffff;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.options-alarm-btn:hover {
+  box-shadow: inset 0 0 20px 5px #ffffff;
+}
+.options-alarm-items {
+  width: 50%;
+  height: 50%;
+  overflow-y: scroll;
+  padding: 15px 30px;
+  flex-shrink: 1;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.options-alarm-items::-webkit-scrollbar {
+  display: none;
+}
+.options-alarm-items-X {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.options-alarm-items-X > input {
+  display: none;
+}
+.options-alarm-items-X > label {
+  width: 50px;
+  height: 28px;
+  border-radius: 50px;
+  border: 1px solid black;
+  position: relative;
+  padding: 2px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.options-alarm-items-X > label > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: 0.2s;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+}
+.options-alarm-items-X > input:checked + label > div {
+  left: 25px;
+}
+.options-alarm-items-X > input:checked + label {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.options-alarm-items-X-time {
+  font-size: 1.5em;
+}
+.options-alarm-items-X-delete {
+  font-size: 2em;
+  cursor: pointer;
+}
+.options-stopwatch {
+  flex-direction: column;
+  gap: 25px;
+  flex-shrink: 1;
+}
+.options-stopwatch-header {
+  font-size: 2em;
+  text-align: center;
+}
+.options-stopwatch-text {
+  font-size: 2em;
+  text-align: center;
+}
+.options-stopwatch-btns {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.options-stopwatch-btns > button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
+  box-shadow: inset 0 0 20px #ffffff;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.options-stopwatch-btns > button:not(:disabled):hover {
+  box-shadow: inset 0 0 20px 10px #ffffff;
+}
+.options-stopwatch-intervals {
+  width: 60%;
+  height: 50%;
+  margin: auto;
+  padding: 15px;
+  overflow: auto;
+  text-align: center;
+  box-shadow: inset 0 0 20px #ffffff;
+  border-radius: 20px;
+}
+.options-stopwatch-intervals::-webkit-scrollbar {
+  display: none;
+}
+.options-timer {
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  flex-shrink: 1;
+  position: relative;
+}
+.options-timer-message {
+  font-size: 2em;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.options-timer-text {
+  text-align: center;
+  margin: 20px 0;
+}
+.options-timer-set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+}
+.options-timer-set-hours, .options-timer-set-min, .options-timer-set-sec {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 25%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px #ffffff;
+  font-size: 1.5em;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.options-timer-set-hours:hover, .options-timer-set-min:hover, .options-timer-set-sec:hover {
+  box-shadow: inset 0 0 20px 10px #ffffff;
+}
+.options-timer-set-hours-numbers, .options-timer-set-min-numbers, .options-timer-set-sec-numbers {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.options-timer-set-hours-numbers-item, .options-timer-set-min-numbers-item, .options-timer-set-sec-numbers-item {
+  text-align: center;
+  background-color: #ffffff;
+}
+.options-timer-set-hours-numbers-item > p:hover, .options-timer-set-min-numbers-item > p:hover, .options-timer-set-sec-numbers-item > p:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.options-timer-set-colon {
+  font-size: 2em;
+}
+.options-timer-btns {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.options-timer-btns > button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
+  box-shadow: inset 0 0 20px #ffffff;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.options-timer-btns > button:not(:disabled):hover {
+  box-shadow: inset 0 0 20px 10px #ffffff;
+}
+
+.hide {
+  display: none;
+}
